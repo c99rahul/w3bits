@@ -16,6 +16,7 @@
     "astro": "^2.0.15"
   },
   "devDependencies": {
-    "dart-sass": "^1.25.0"
+    "dart-sass": "^1.25.0",
+    "sass": "^1.60.0"
   }
 }
