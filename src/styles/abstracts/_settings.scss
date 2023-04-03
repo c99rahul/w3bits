@@ -1,0 +1,63 @@
+$leading: (
+  copy: 161.8%,
+  slim: 145%,
+  heading: 115%,
+  unit: 100%,
+);
+
+// Base numbers for sizing and spacing
+$type-base: 16;
+$space-base: 16;
+
+// Scales or Magic numbers
+$type-scale: 1.125;
+$type-scale-large: 1.2;
+$space-scale: 1.2825;
+
+// Font-faces or font-families
+$font-faces: (
+  copy: (
+    "Inter",
+    sans-serif,
+  ),
+  code: (
+    "Roboto Mono",
+    monospace,
+  ),
+);
+
+// Scale-based variations
+$type-vars: (
+  "50": modular-scale($space-base, $space-scale, -2.1),
+  "100": modular-scale($type-base, $type-scale, -2),
+  "200": modular-scale($type-base, $type-scale, -1),
+  "300": modular-scale($type-base, $type-scale, 0),
+  "400": modular-scale($type-base, $type-scale, 1),
+  "500": modular-scale($type-base, $type-scale, 2),
+  "600": modular-scale($type-base, $type-scale, 3),
+  "700": modular-scale($type-base, $type-scale, 4),
+  "800": modular-scale($type-base, $type-scale, 5),
+  "900": modular-scale($type-base, $type-scale, 6),
+);
+
+$space-vars: (
+  "0": 0,
+  "50": modular-scale($space-base, $space-scale, -4),
+  "100": modular-scale($space-base, $space-scale, -2),
+  "200": modular-scale($space-base, $space-scale, -1),
+  "300": modular-scale($space-base, $space-scale, 0),
+  "400": modular-scale($space-base, $space-scale, 1),
+  "500": modular-scale($space-base, $space-scale, 2),
+  "600": modular-scale($space-base, $space-scale, 3),
+  "700": modular-scale($space-base, $space-scale, 4),
+  "800": modular-scale($space-base, $space-scale, 5),
+  "900": modular-scale($space-base, $space-scale, 5.6),
+);
+
+// Widths (max-widths)
+$widths: (
+  row: 1024px,
+  wide-row: 1280px,
+  content: 750px,
+  sidebar: 300px,
+);

@@ -1,0 +1,16 @@
+---
+interface Props {
+  name?: String;
+  classes?: String;
+}
+
+const { name = null, classes = null } = Astro.props as Props;
+---
+
+{
+  name && (
+    <svg class:list={["icon", { classes }]}>
+      <use xlink:href={`/icons.svg#${name}`} />
+    </svg>
+  )
+}

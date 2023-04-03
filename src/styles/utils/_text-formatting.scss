@@ -1,0 +1,33 @@
+@mixin formatting() {
+  .text-bold {
+    font-weight: bold;
+  }
+  .text-italic {
+    font-style: italic;
+  }
+  .text-underline {
+    text-decoration: underline;
+  }
+  .text-deleted {
+    text-decoration: overline;
+  }
+  .text-marked {
+  }
+
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+
+  .text-capitalize {
+    text-transform: capitalize;
+  }
+
+  .text-spaced {
+    letter-spacing: 1px;
+  }
+
+  .text-spaced--2px {
+    letter-spacing: 2px;
+  }
+}
+@include formatting();

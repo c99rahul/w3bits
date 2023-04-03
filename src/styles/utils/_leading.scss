@@ -1,0 +1,5 @@
+@each $label, $value in $leading {
+  .leading-#{$label} {
+    line-height: $value;
+  }
+}

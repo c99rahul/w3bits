@@ -1,0 +1,49 @@
+@mixin paddings($postfix: null, $mediaBreakpoint: null) {
+  $mediaBreakpoint: append-string($mediaBreakpoint, "\\:");
+  $postfix: append-string($postfix, "-");
+
+  @each $label, $scale in $space-vars {
+    .#{$mediaBreakpoint}p-#{$label}#{$postfix} {
+      padding: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}pt-#{$label}#{$postfix} {
+      padding-top: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}pr-#{$label}#{$postfix} {
+      padding-right: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}pb-#{$label}#{$postfix} {
+      padding-bottom: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}pl-#{$label}#{$postfix} {
+      padding-left: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}py-#{$label}#{$postfix} {
+      padding-top: var(--ss-#{$label});
+      padding-bottom: var(--ss-#{$label});
+    }
+    .#{$mediaBreakpoint}px-#{$label}#{$postfix} {
+      padding-right: var(--ss-#{$label});
+      padding-left: var(--ss-#{$label});
+    }
+  }
+}
+
+@include paddings();
+@include screen("lg") {
+  @include paddings(null, "lg");
+}
+@include screen("md") {
+  @include paddings(null, "md");
+}
+@include screen("sm") {
+  @include paddings(null, "sm");
+}
+@include screen("xs") {
+  @include paddings(null, "xs");
+}

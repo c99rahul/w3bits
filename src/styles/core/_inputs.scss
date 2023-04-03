@@ -1,0 +1,40 @@
+input,
+button,
+select,
+textarea {
+  display: inline-block;
+  vertical-align: bottom;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  @extend .btn-or-fld;
+}
+
+input:not([type="submit"]) :not([type="reset"]) :not([type="button"]),
+select {
+  width: 100%;
+  max-width: 200px;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  max-height: 350px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  vertical-align: middle;
+}

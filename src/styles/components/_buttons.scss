@@ -1,0 +1,25 @@
+.btn {
+  @extend .btn-or-fld, .inline-flex, .items-center, .justify-center;
+  line-height: 1;
+}
+
+.btn--outline {
+  border-color: currentColor;
+}
+
+.btn--transparent {
+  background-color: transparent;
+}
+
+.btn--wide {
+  width: 100%;
+}
+
+.btn-or-fld {
+  @extend .br-4px, .px-200, .py-200, .bs-1px !optional;
+}
+
+.btn__label + .btn__icon,
+.btn__icon + .btn__label {
+  @extend .ml-500;
+}

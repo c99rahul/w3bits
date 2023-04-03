@@ -1,0 +1,40 @@
+@mixin margins($postfix: null, $mediaBreakpoint: null) {
+  $mediaBreakpoint: append-string($mediaBreakpoint, "\\:");
+  $postfix: append-string($postfix, "-");
+
+  @each $label, $scale in $space-vars {
+    .#{$mediaBreakpoint}m-#{$label}#{$postfix} {
+      margin: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}mt-#{$label}#{$postfix} {
+      margin-top: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}mr-#{$label}#{$postfix} {
+      margin-right: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}mb-#{$label}#{$postfix} {
+      margin-bottom: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}ml-#{$label}#{$postfix} {
+      margin-left: var(--ss-#{$label});
+    }
+
+    .#{$mediaBreakpoint}my-#{$label}#{$postfix} {
+      margin-top: var(--ss-#{$label});
+      margin-bottom: var(--ss-#{$label});
+    }
+    .#{$mediaBreakpoint}mx-#{$label}#{$postfix} {
+      margin-right: var(--ss-#{$label});
+      margin-left: var(--ss-#{$label});
+    }
+  }
+}
+
+@include margins();
+@include screen("lg") {
+  @include margins(null, "lg");
+}

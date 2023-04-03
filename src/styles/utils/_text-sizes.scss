@@ -1,0 +1,15 @@
+@mixin textSizes($postfix: null, $breakpoint: null) {
+  $breakpoint: append-string($breakpoint, "\\:");
+  $postfix: append-string($postfix, "-");
+
+  @each $label, $scale in $type-vars {
+    .#{$breakpoint}#{$postfix}#{$label} {
+      font-size: var(--ts-#{$label});
+    }
+  }
+}
+
+@include textSizes("text-size");
+@include screen("lg") {
+  @include textSizes("text-size", "lg");
+}

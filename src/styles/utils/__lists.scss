@@ -1,0 +1,120 @@
+.li-in > li {
+  display: inline;
+}
+.li-in > li:not(:last-child) {
+  margin-right: 1em;
+}
+
+.li-bl > li,
+.li-bo > li,
+.li-ln > li,
+.li-ln > li > a {
+  display: block;
+  margin: 0 !important;
+}
+
+.li-bo > li,
+.li-ln > li > a {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.li-bo > li,
+.li-ln > li {
+  border-style: solid;
+}
+
+.li-bo > li:not(:last-child),
+.li-ln > li:not(:last-child) {
+  border-width: 0 0 1px;
+}
+
+.li-ln > li > a {
+  display: block;
+}
+
+.showcase,
+.bare-list {
+  margin-top: 2.25em !important;
+  margin-bottom: 2.25em !important;
+}
+.showcase > li:not(:last-child),
+.bare-list > li:not(:last-child) {
+  margin-bottom: 2.25em !important;
+  padding-bottom: 2.25em !important;
+  border-bottom: 1px solid;
+}
+
+.bare-list {
+  margin-left: 0;
+}
+.bare-list > li {
+  list-style-position: inside;
+}
+.bare-list > li > h1,
+.bare-list > li > h2,
+.bare-list > li > h3,
+.bare-list > li > h4,
+.bare-list > li > h5,
+.bare-list > li > h6 {
+  display: inline-block;
+  margin-top: 0 !important;
+  font-size: 1.42383em;
+}
+.bare-list > li pre,
+.bare-list > li table,
+.bare-list > li figure,
+.bare-list > li blockquote {
+  margin: 1.8em 0 !important;
+}
+.bare-list > li h1 + pre,
+.bare-list > li h1 + table,
+.bare-list > li h1 + figure,
+.bare-list > li h1 + blockquote,
+.bare-list > li h2 + pre,
+.bare-list > li h2 + table,
+.bare-list > li h2 + figure,
+.bare-list > li h2 + blockquote,
+.bare-list > li h3 + pre,
+.bare-list > li h3 + table,
+.bare-list > li h3 + figure,
+.bare-list > li h3 + blockquote,
+.bare-list > li h4 + pre,
+.bare-list > li h4 + table,
+.bare-list > li h4 + figure,
+.bare-list > li h4 + blockquote,
+.bare-list > li h5 + pre,
+.bare-list > li h5 + table,
+.bare-list > li h5 + figure,
+.bare-list > li h5 + blockquote,
+.bare-list > li h6 + pre,
+.bare-list > li h6 + table,
+.bare-list > li h6 + figure,
+.bare-list > li h6 + blockquote {
+  margin-top: 0 !important;
+}
+
+.showcase {
+  counter-reset: numbered-list;
+}
+.showcase > li {
+  position: relative;
+  display: block;
+  margin-left: 1em;
+}
+.showcase > li:before {
+  position: absolute;
+  top: 0;
+  left: -2.5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+  content: counter(numbered-list);
+  counter-increment: numbered-list;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 1;
+}

@@ -1,0 +1,100 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Row from "../components/Row.astro";
+import Widget from "../components/Widget.astro";
+import MainLayout from "./MainLayout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, tagline, description, pubDate, updatedDate, heroImage } =
+  Astro.props;
+---
+
+<MainLayout title={title} description={description}>
+  <div class="lg:py-600" id="main">
+    <Row flex={false} padding="">
+      <div class="content-area lg:flex gap-600" id="content">
+        <div class="content w-content">
+          <Widget wide={true}>
+            <article class="post">
+              <header class="entry-header pb-500 mb-700 bbs-1px">
+                <!-- <h2
+                  class="entry-summary none lg:block secondary-color-800 lh-bo text-size-300 weight-400 mt-0 mb-xs"
+                >
+                  {tagline}
+                </h2> -->
+                <FormattedDate
+                  isAuthor={true}
+                  date={pubDate}
+                  classes={"text-size-100 mb-200"}
+                />
+                {
+                  updatedDate && (
+                    <span class="last-updated-on">
+                      Last updated on <FormattedDate date={updatedDate} />
+                    </span>
+                  )
+                }
+                <h1 class="entry-title weight-900 my-0">
+                  {title}
+                </h1>
+                <div class="none items-center gap-200 leading-unit my-300">
+                  <img
+                    src="/avatar.jpg"
+                    width="48"
+                    class="br-circle self-center"
+                  />
+                  <div>
+                    <h3 class="m-0 text-bold text-size-100">Rahul C.</h3>
+                    <a href="#" class="text-size-100">@w3bits_</a>
+                  </div>
+                </div>
+              </header><!-- .entry-header -->
+              <main class="entry-content mt-600">
+                <div class="entry-copy"><slot /></div>
+              </main>
+              <footer class="mt-800">
+                <div
+                  class="yarpp yarpp-related yarpp-related-website yarpp-template-yarpp-template-w"
+                >
+                  <h6>Read further</h6>
+                  <ul class="related-reading">
+                    <li>
+                      Read Next:
+                      <a
+                        href="https://w3bits.com/css-earth/"
+                        rel="bookmark noopener nofollow"
+                        target="_blank"
+                        onclick="ga('send', 'event', 'related', 'clicked');"
+                        >3d Earth with Rotating Animation with CSS</a
+                      >
+                    </li>
+                    <li>
+                      Explore more in <a href="#">CSS</a>, <a href="#"
+                        >JavaScript</a
+                      >, and <a href="#">HTML</a> categories
+                    </li>
+                    <li>
+                      <a
+                        href="https://w3bits.com/css-spritesheet-animation/"
+                        rel="bookmark noopener nofollow"
+                        target="_blank"
+                        onclick="ga('send', 'event', 'related', 'clicked');"
+                        >Tweet this article</a
+                      >
+                    </li>
+                  </ul><!-- .related-reading -->
+                </div>
+              </footer>
+            </article>
+          </Widget>
+        </div>
+        <Sidebar />
+      </div>
+    </Row>
+  </div>
+</MainLayout>

@@ -1,0 +1,20 @@
+:root {
+  --leading-copy: #{map-get($leading, copy)};
+  --leading-slim: #{map-get($leading, slim)};
+  --leading-heading: #{map-get($leading, heading)};
+
+  --font-copy: #{map-get($font-faces, copy)};
+  --font-code: #{map-get($font-faces, code)};
+
+  @each $label, $value in $type-vars {
+    --ts-#{$label}: #{$value};
+  }
+
+  @each $label, $value in $space-vars {
+    --ss-#{$label}: #{$value};
+  }
+
+  @each $label, $value in $widths {
+    --w-#{$label}: #{$value};
+  }
+}

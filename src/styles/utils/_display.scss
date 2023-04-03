@@ -1,0 +1,29 @@
+@mixin display($postfix: null, $breakpoint: null) {
+  $breakpoint: append-string($breakpoint, "\\:");
+  $postfix: append-string($postfix, "-");
+
+  .#{$breakpoint}#{$postfix}flex {
+    display: flex;
+  }
+  .#{$breakpoint}#{$postfix}inline-flex {
+    display: inline-flex;
+  }
+  .#{$breakpoint}#{$postfix}grid {
+    display: grid;
+  }
+  .#{$breakpoint}#{$postfix}inline-grid {
+    display: inline-grid;
+  }
+  .#{$breakpoint}#{$postfix}block {
+    display: block;
+  }
+  .#{$breakpoint}#{$postfix}none {
+    display: none;
+  }
+}
+
+@include display();
+
+@include screen("lg") {
+  @include display(null, "lg");
+}

@@ -1,0 +1,62 @@
+@mixin displayBasedAlignments($breakpoint: null) {
+  $breakpoint: append-string($breakpoint, "\\:");
+
+  .#{$breakpoint}fw-wr {
+    flex-wrap: wrap;
+  }
+
+  .#{$breakpoint}flex-grow-1 {
+    flex: 1 1 200px;
+  }
+
+  .#{$breakpoint}self-center {
+    align-self: center;
+  }
+
+  .#{$breakpoint}justify-center {
+    justify-content: center;
+  }
+
+  .#{$breakpoint}justify-between {
+    justify-content: space-between;
+  }
+
+  .#{$breakpoint}justify-around {
+    justify-content: space-around;
+  }
+
+  .#{$breakpoint}justify-end {
+    justify-content: flex-end;
+  }
+
+  .#{$breakpoint}items-center {
+    align-items: center;
+  }
+
+  .#{$breakpoint}flex-col {
+    flex-direction: column;
+  }
+
+  .#{$breakpoint}va-m {
+    vertical-align: middle;
+  }
+}
+
+@mixin floatedAlignments() {
+  .alignnone {
+    float: none;
+  }
+}
+
+@mixin marginBasedAlignments() {
+  .aligncenter,
+  .centered-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@include displayBasedAlignments();
+@include floatedAlignments();
+@include marginBasedAlignments();

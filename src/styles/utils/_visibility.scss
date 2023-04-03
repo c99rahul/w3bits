@@ -1,0 +1,30 @@
+@mixin visibility($mediaBreakpoint: null) {
+  $mediaBreakpoint: validatePostFixedParams($mediaBreakpoint, ":");
+  .#{$mediaBreakpoint}visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .#{$mediaBreakpoint}hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@mixin opacity($mediaBreakpoint: null) {
+  $mediaBreakpoint: validatePostFixedParams($mediaBreakpoint, ":");
+  .#{$mediaBreakpoint}o-25 {
+    opacity: 0.25;
+  }
+
+  .#{$mediaBreakpoint}o-50 {
+    opacity: 0.5;
+  }
+
+  .#{$mediaBreakpoint}o-75 {
+    opacity: 0.75;
+  }
+}
+
+@include visibility();
+@include opacity();

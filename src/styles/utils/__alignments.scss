@@ -1,0 +1,57 @@
+.fw-wr {
+  flex-wrap: wrap !important;
+}
+
+.jc-ce {
+  justify-content: center !important;
+}
+
+.jc-sb {
+  justify-content: space-between !important;
+}
+
+.jc-sa {
+  justify-content: space-around !important;
+}
+
+.jc-fe {
+  justify-content: flex-end !important;
+}
+
+.ai-ce {
+  align-items: center !important;
+}
+
+.fd-co {
+  flex-direction: column !important;
+}
+
+/* 5.2 */
+.ta-le {
+  text-align: left !important;
+}
+
+.ta-ce {
+  text-align: center !important;
+}
+
+.ta-ri {
+  text-align: right !important;
+}
+
+/* 5.3 */
+.alignnone {
+  float: none;
+}
+
+.aligncenter,
+.centered-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* 5.4 */
+.va-m {
+  vertical-align: middle;
+}

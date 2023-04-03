@@ -1,0 +1,63 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import Row from "@components/Row.astro";
+import Widget from "@components/Widget.astro";
+import Sidebar from "@components/Sidebar.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="lg:py-700" id="main">
+    <Row flex={false} padding="">
+      <div class="content-area lg:flex gap-500" id="content">
+        <div class="content w-content">
+          <Widget wide={true} title={"Recent Posts"}>
+            <div class="post-index">
+              {
+                posts.map((post) => (
+                  <>
+                    <div class="post-listing lg:flex gap-500 ai-ce jc-sb border-bw-1px border-solid pb-600 mb-600">
+                      <img
+                        style="align-self: center"
+                        width="150"
+                        height="150"
+                        class="br-4px"
+                        src="https://w3bits.com/wp-content/uploads/css-flip-animation-thumb-200x200.jpg"
+                      />
+                      <div>
+                        <div class="lh-hl text-size-100 mb-100">
+                          <FormattedDate date={post.data.pubDate} />
+                        </div>
+                        <h2 class="post-listing-title lh-bo text-size-600 weight-800 mt-0 mb-xs ">
+                          <a
+                            class="secondary-color-300"
+                            href={`/blog/${post.slug}/`}
+                          >
+                            {post.data.title}
+                          </a>
+                        </h2>
+                        <p class="text-size-200 leading-slim secondary-color-800">
+                          {post.data.description}
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                ))
+              }
+            </div>
+          </Widget>
+        </div>
+        <Sidebar />
+      </div>
+    </Row>
+  </div>
+</MainLayout>

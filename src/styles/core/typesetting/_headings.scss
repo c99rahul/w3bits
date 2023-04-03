@@ -1,0 +1,58 @@
+h1 {
+  @extend .text-size-800 !optional;
+}
+
+h2 {
+  @extend .text-size-700 !optional;
+}
+
+h3 {
+  @extend .text-size-600 !optional;
+}
+
+h4 {
+  @extend .text-size-500 !optional;
+}
+
+h5 {
+  @extend .text-size-400 !optional;
+}
+
+h6 {
+  @extend .text-size-300 !optional;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 1.35em;
+  margin-bottom: 1rem;
+  line-height: var(--leading-heading);
+  font-family: var(--fontSecondary);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h4,
+h5,
+h6 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h5,
+h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

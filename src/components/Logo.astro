@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+
+const { href, class: className, ...props } = Astro.props;
+
+const { pathname } = Astro.url;
+const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+---
+
+<h1 class="logo m-0">
+  <a
+    href={href}
+    title={}
+    class:list={[className, { active: isActive }]}
+    {...props}
+  >
+    <slot />
+  </a>
+</h1>

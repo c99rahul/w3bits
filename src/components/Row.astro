@@ -1,0 +1,30 @@
+---
+interface Props {
+  id?: String;
+  wide?: Boolean;
+  flex?: Boolean;
+  alignment?: String;
+  padding?: String;
+  gap?: number;
+}
+
+const {
+  id = null,
+  wide = false,
+  flex = true,
+  alignment = "justify-between items-center",
+  padding = "p-lg sm:p-xl md:p-2xl lg:p-3xl",
+} = Astro.props as Props;
+---
+
+<div
+  {id}
+  class:list={[
+    "section-row centered-block w-row",
+    { "w-wide-row": wide, flex: flex },
+    flex && alignment,
+    padding,
+  ]}
+>
+  <slot />
+</div>

@@ -1,0 +1,5 @@
+.widget {
+  &:not(:last-child) {
+    @extend .mb-900;
+  }
+}

@@ -1,0 +1,25 @@
+.list {
+  > li {
+    @extend .block !optional;
+  }
+}
+
+.list--inline {
+  @extend .flex, .gap-400 !optional;
+}
+
+.list--link-block {
+  > a {
+    @extend .block !optional;
+  }
+  > li {
+    @extend .py-200;
+    &:not(:last-child) {
+      @extend .bbs-1px;
+    }
+  }
+}
+
+.lg\:list--inline {
+  @extend .lg\:flex !optional;
+}

@@ -1,0 +1,63 @@
+pre {
+  position: relative;
+  border-radius: 4px;
+  code {
+    position: relative;
+    z-index: 1000;
+    display: block;
+    max-height: 450px;
+    @extend .p-500;
+  }
+  &,
+  & code {
+    word-wrap: break-word;
+  }
+}
+
+pre,
+code,
+samp {
+  font-family: var(--font-code);
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}
+
+figure {
+  text-align: center;
+  figcaption {
+    text-align: left;
+  }
+}
+
+blockquote {
+  @extend .p-500;
+  border-left: 6px solid;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+hr,
+pre,
+table,
+figure,
+blockquote {
+  &,
+  &:not(:first-child),
+  &:not(:first-child),
+  &:not(:first-child),
+  &:not(:first-child) {
+    @extend .mt-600 !optional;
+  }
+
+  &,
+  &:not(:last-child),
+  &:not(:last-child),
+  &:not(:last-child),
+  &:not(:last-child) {
+    @extend .mb-600 !optional;
+  }
+}

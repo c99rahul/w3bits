@@ -1,0 +1,36 @@
+---
+import Icon from "../components/Icon.astro";
+
+interface Props {
+  wide?: Boolean;
+  title?: String;
+  icon?: String;
+  classes?: String;
+}
+
+const {
+  wide = false,
+  title = null,
+  icon = null,
+  classes = null,
+} = Astro.props as Props;
+---
+
+<div
+  class:list={[
+    classes,
+    "widget mb-500 outline-4px",
+    { "widget--wide px-900 py-800 mb-900": wide },
+  ]}
+>
+  {
+    title && (
+      <div class="widget-title flex items-center gap-300 mb-300 text-bold">
+        {title}
+        <Icon name={icon} />
+      </div>
+    )
+  }
+
+  <slot />
+</div>

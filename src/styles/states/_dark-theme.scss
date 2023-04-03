@@ -1,0 +1,203 @@
+:root {
+  --hue: 200;
+  --accent: hsl(var(--hue) 70% 55%);
+  --accent-100: hsl(var(--hue) 60% 10%);
+  --accent-200: hsl(var(--hue) 60% 20%);
+  --accent-300: hsl(var(--hue) 60% 30%);
+  --accent-400: hsl(var(--hue) 60% 40%);
+  --accent-500: var(--accent);
+  --accent-600: hsl(var(--hue) 45% 60%);
+  --accent-700: hsl(var(--hue) 45% 70%);
+  --accent-800: hsl(var(--hue) 45% 80%);
+  --accent-900: hsl(var(--hue) 45% 90%);
+
+  --secondary: hsl(var(--hue) 10% 75%);
+  --secondary-100: hsl(var(--hue) 10% 80%);
+  --secondary-200: hsl(var(--hue) 10% 85%);
+  --secondary-300: hsl(var(--hue) 10% 95%);
+  --secondary-400: hsl(var(--hue) 10% 97.5%);
+  --secondary-500: var(--secondary);
+  --secondary-600: hsl(var(--hue) 10% 55%);
+  --secondary-700: hsl(var(--hue) 10% 60%);
+  --secondary-800: hsl(var(--hue) 10% 65%);
+  --secondary-900: hsl(var(--hue) 10% 70%);
+
+  --primary: hsl(var(--hue) 15% 20%);
+  --primary-100: hsl(var(--hue) 15% 22.5%);
+  --primary-200: hsl(var(--hue) 15% 20%);
+  --primary-300: hsl(var(--hue) 15% 17.5%);
+  --primary-400: hsl(var(--hue) 15% 15%);
+  --primary-500: var(--primary);
+  --primary-600: hsl(var(--hue) 15% 25%);
+  --primary-700: hsl(var(--hue) 15% 27.5%);
+  --primary-800: hsl(var(--hue) 15% 30%);
+  --primary-900: hsl(var(--hue) 15% 32.5%);
+  --primary-1000: hsl(var(--hue) 15% 35%);
+
+  --dark-opaque-100: hsl(var(--hue) 10% 10% / 10%);
+  --dark-opaque-200: hsl(var(--hue) 10% 10% / 20%);
+  --dark-opaque-300: hsl(var(--hue) 10% 10% / 30%);
+  --dark-opaque-400: hsl(var(--hue) 10% 10% / 30%);
+  --dark-opaque-500: hsl(var(--hue) 10% 10% / 50%);
+  --dark-opaque-600: hsl(var(--hue) 10% 10% / 60%);
+  --dark-opaque-700: hsl(var(--hue) 10% 10% / 70%);
+  --dark-opaque-800: hsl(var(--hue) 10% 10% / 80%);
+  --dark-opaque-900: hsl(var(--hue) 10% 10% / 90%);
+
+  --light-opaque-100: hsl(var(--hue) 15% 90% / 10%);
+  --light-opaque-200: hsl(var(--hue) 15% 90% / 20%);
+  --light-opaque-300: hsl(var(--hue) 15% 90% / 30%);
+  --light-opaque-400: hsl(var(--hue) 15% 90% / 30%);
+  --light-opaque-500: hsl(var(--hue) 15% 90% / 50%);
+  --light-opaque-600: hsl(var(--hue) 15% 90% / 60%);
+  --light-opaque-700: hsl(var(--hue) 15% 90% / 70%);
+  --light-opaque-800: hsl(var(--hue) 15% 90% / 80%);
+  --light-opaque-900: hsl(var(--hue) 15% 90% / 90%);
+}
+
+$primary: generateMaps(9, "primary");
+$secondary: generateMaps(9, "secondary");
+$accent: generateMaps(10, "accent");
+
+@include generate-shades($primary, "color", "primary-color");
+@include generate-shades($primary, "background-color", "primary-bg");
+@include generate-shades($secondary, "color", "secondary-color");
+@include generate-shades($secondary, "background-color", "secondary-bg");
+@include generate-shades($accent, "color", "accent-color");
+@include generate-shades($accent, "background-color", "accent-bg");
+
+body {
+  background: var(--primary-500);
+  color: var(--secondary-500);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+.text-bold {
+  color: var(--secondary-300);
+}
+
+a {
+  color: var(--accent-500);
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--accent-200);
+  }
+}
+
+pre {
+  &,
+  code {
+    background-color: var(--primary-900);
+    color: var(--secondary-700);
+  }
+}
+
+.site-header {
+  &,
+  a {
+    color: var(--accent-800);
+  }
+
+  a {
+    @at-root &.active,
+      &:hover,
+      &:active,
+      &:focus {
+      color: var(--accent-900);
+    }
+  }
+  .active {
+    font-weight: bold;
+  }
+
+  .logo {
+    & + nav {
+      border-color: var(--light-opaque-100);
+    }
+  }
+}
+
+.widget {
+}
+
+.widget:not(.widget--wide) {
+  .list {
+    > li {
+      border-color: var(--primary-600);
+    }
+  }
+}
+
+.widget--wide {
+}
+
+.entry-content {
+  a {
+    color: var(--secondary-300);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--accent-500);
+    @extend .weight-500;
+    &:hover {
+      text-decoration-color: var(--accent-400);
+      text-decoration-thickness: 2px;
+    }
+  }
+}
+
+.btn,
+.button {
+  &:not(.btn--primary) {
+    color: #fff;
+    background-color: var(--accent-500);
+    border-color: var(--accent-500);
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: var(--accent-400);
+    border-color: var(--accent-400);
+  }
+}
+
+input:not([type="submit"]):not([type="reset"]):not([type="button"]),
+select {
+  border-color: var(--primary-500);
+}
+
+.post-listing,
+.bbs-1px,
+hr {
+  border-color: var(--primary-900);
+}
+
+caption,
+figcaption {
+  color: var(--secondary-900);
+}
+
+footer {
+  &,
+  a {
+    color: var(--secondary-800);
+  }
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--secondary-400);
+    }
+  }
+  .section-row {
+    border-color: var(--primary-400);
+  }
+}

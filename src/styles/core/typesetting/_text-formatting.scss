@@ -1,0 +1,9 @@
+b,
+strong {
+  @extend .text-bold !optional;
+}
+
+i,
+em {
+  @extend .text-italic !optional;
+}

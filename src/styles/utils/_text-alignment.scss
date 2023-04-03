@@ -1,0 +1,19 @@
+@mixin text-alignments($prefix, $mediaBreakpoint: null) {
+  @if $mediaBreakpoint {
+    $mediaBreakpoint: $mediaBreakpoint + ":";
+  } @else {
+    $mediaBreakpoint: "";
+  }
+
+  .#{$mediaBreakpoint}#{$prefix}-left {
+    text-align: left;
+  }
+  .#{$mediaBreakpoint}#{$prefix}-right {
+    text-align: right;
+  }
+  .#{$mediaBreakpoint}#{$prefix}-center {
+    text-align: center;
+  }
+}
+
+@include text-alignments("ta");

@@ -1,0 +1,17 @@
+---
+const { date, classes, isAuthor = false } = Astro.props;
+---
+
+<div class={classes}>
+  <time datetime={date.toISOString()}>
+    {
+      date.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    }
+  </time>
+  {isAuthor ? ` by Rahul C.` : ""}
+</div>

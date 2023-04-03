@@ -1,0 +1,50 @@
+@use "sass:list";
+///
+/// Provide the media queries for the screen based on a selected
+/// number of screen-sizes. Also provide the option to input a custom
+/// query in case when none of the predefined sets fit the criteria.
+///
+/// @param $size Screen extremes
+/// @since Bits 1.0 24-03-2023
+///
+@mixin screen($size) {
+  $large: "(min-width: 1200px)";
+  $medium: "(max-width: 1169px) and (min-width: 992px)";
+  $small: "(max-width: 991px) and (min-width: 768px)";
+  $extra-small: "(max-width: 767px) and (min-width: 576x)";
+  $tiny: "(max-width: 575px)";
+  @if $size == lg {
+    @media only screen and #{$large} {
+      @content;
+    }
+  } @else if $size == md {
+    @media only screen and #{$medium} {
+      @content;
+    }
+  } @else if $size == sm {
+    @media only screen and #{$small} {
+      @content;
+    }
+  } @else if $size == xs {
+    @media only screen and #{$extra-small} {
+      @content;
+    }
+  } @else if $size == ti {
+    @media only screen and #{$tiny} {
+      @content;
+    }
+  } @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}
+
+@mixin generate-shades($shade-map, $shade-prop, $prefix, $postfix: null) {
+  $postfix: append-string($postfix, "\\:");
+  @each $label, $value in $shade-map {
+    .#{$postfix}#{$prefix}-#{$label} {
+      #{$shade-prop}: $value;
+    }
+  }
+}

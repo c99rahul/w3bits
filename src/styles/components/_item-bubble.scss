@@ -1,0 +1,9 @@
+.item-bubble {
+  @extend .flex, .gap-100, .items-center;
+  &:after {
+    @extend .text-size-50, .p-100, .leading-unit, .br-4px, .self-center;
+    content: attr(data-bubble);
+    background-color: #07c;
+    color: white;
+  }
+}

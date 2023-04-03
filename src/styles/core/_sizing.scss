@@ -1,0 +1,15 @@
+:root {
+  box-sizing: border-box;
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  font: 1em / var(--leading-copy) var(--font-copy);
+}

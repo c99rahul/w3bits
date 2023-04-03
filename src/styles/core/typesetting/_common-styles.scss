@@ -1,0 +1,52 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  pre,
+  table,
+  figure,
+  blockquote {
+    margin-top: 0 !important;
+  }
+}
+
+li {
+  pre,
+  table,
+  figure,
+  blockquote {
+    margin-left: -1.8em;
+    &:not(:first-child) {
+      margin-top: 1em;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+table,
+pre code {
+  overflow: auto;
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+  &::-webkit-scrollbar:vertical {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+hr {
+  border-width: 1px 0 0;
+  border-style: solid;
+}

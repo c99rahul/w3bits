@@ -1,0 +1,70 @@
+@use "sass:math";
+@use "sass:map";
+
+///
+/// Calculate the modular-scale based on a base number, a given
+/// multiplier, and a level of calculation. Also output the final
+/// number postfixed with the specified CSS unit.
+///
+/// @param  {Number} $base       Optional, useful in calculating pixel-based scales
+/// @param  {Number} $multiplier Raised to a power (`$level`) to calculate the final scale
+/// @param  {Number} $level      Scale-level; raised as a power to the `$multiplier`
+/// @param  {String} $unit       CSS unit for the final output
+/// @return {String}
+/// @since  Bits 1.0 24-03-2023
+///
+@function modular-scale($base: 16, $multiplier, $level, $unit: "em") {
+  @if $unit == "px" {
+    @return #{$base * math.pow($multiplier, $level) * 1px};
+  }
+  @return #{math.pow($multiplier, $level) + $unit};
+}
+
+///
+/// Calculate a number to a given exponent.
+///
+/// @param  {Number} $raised-number The number in question
+/// @param  {Number} $exponent      Exponent to which the number should raise
+/// @return {Number}
+/// @since  Bits 1.0 24-03-2023
+///
+@function pow($raised-number, $exponent: 0) {
+  $final-number: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $final-number: calc($final-number * $raised-number);
+    }
+  } @else if $exponent < 0 {
+    @for $i from 1 through -$exponent {
+      $final-number: calc($final-number / $raised-number);
+    }
+  }
+
+  @return $final-number;
+}
+
+///
+/// Append text to a given string.
+///
+/// @param  {String} $target-string The string in question
+/// @param  {String} $appended-text Text to be appended to `$target-string`
+/// @return {String}
+/// @since Bits 1.0 24-03-2023
+///
+@function append-string($target-string, $appended-text) {
+  @if $target-string {
+    $target-string: $target-string + $appended-text;
+  } @else {
+    $target-string: "";
+  }
+  @return $target-string;
+}
+
+@function generateMaps($range, $customProp) {
+  $mapName: ();
+  @for $i from 1 through $range {
+    $mapName: map.set($mapName, $i * 100, #{var(--#{$customProp}-#{$i * 100})});
+  }
+  @return $mapName;
+}

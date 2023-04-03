@@ -1,0 +1,15 @@
+@mixin gaps($postfix: null, $mediaBreakpoint: null) {
+  $mediaBreakpoint: append-string($mediaBreakpoint, "\\:");
+  $postfix: append-string($postfix, "-");
+
+  @each $label, $scale in $space-vars {
+    .#{$mediaBreakpoint}gap-#{$label}#{$postfix} {
+      gap: var(--ss-#{$label});
+    }
+  }
+}
+
+@include gaps();
+@include screen("lg") {
+  @include gaps(null, "lg");
+}

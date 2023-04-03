@@ -1,0 +1,5 @@
+@each $label, $value in $widths {
+  .w-#{$label} {
+    max-width: var(--w-#{$label});
+  }
+}

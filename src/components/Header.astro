@@ -1,0 +1,33 @@
+---
+import { SITE_TITLE } from "../consts";
+import MainNav from "./MainNav.astro";
+import Logo from "./Logo.astro";
+import Row from "./Row.astro";
+import Button from "./Button.astro";
+import NotifBanner from "./NotifBanner.astro";
+import Icon from "./Icon.astro";
+---
+
+<!-- <NotifBanner>Hey</NotifBanner> -->
+<header class="site-header">
+  <Row wide={true} padding={"p-300 gap-700 "} id="site-header">
+    <Logo href="./">
+      <img
+        src="https://w3bits.com/files/img/logo.png"
+        style="filter: invert(1)"
+        alt={SITE_TITLE}
+      />
+    </Logo>
+    <button style="order: 2" class="btn btn--outline btn--transparent">
+      <Icon name={"search"} />
+    </button>
+  </Row>
+</header>
+<MainNav />
+
+<script>
+  const x: HTMLElement | null = document.querySelector("#site-header");
+  const n = document.querySelector(".main-nav")?.innerHTML;
+
+  x.innerHTML += `<nav style="margin-right: auto" class="list list--nav list--inline lg:flex none text-size-200">${n}</nav>`;
+</script>

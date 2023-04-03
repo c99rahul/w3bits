@@ -1,0 +1,162 @@
+.br-4px {
+  border-radius: 4px;
+}
+.br-8px {
+  border-radius: 8px;
+}
+.br-12px {
+  border-radius: 12px;
+}
+.br-16px {
+  border-radius: 16px;
+}
+
+.br-circle {
+  border-radius: 50%;
+}
+
+.border-w-1px {
+  border-width: 1px;
+}
+.border-w-2px {
+  border-width: 2px;
+}
+.border-w-3px {
+  border-width: 3px;
+}
+.border-w-4px {
+  border-width: 4px;
+}
+
+.border-tw-1px {
+  border-top-width: 1px;
+}
+.border-rw-1px {
+  border-right-width: 1px;
+}
+.border-bw-1px {
+  border-bottom-width: 1px;
+}
+.border-lw-1px {
+  border-left-width: 1px;
+}
+
+.border-tw-2px {
+  border-top-width: 2px;
+}
+.border-rw-2px {
+  border-right-width: 2px;
+}
+.border-bw-2px {
+  border-bottom-width: 2px;
+}
+.border-lw-2px {
+  border-left-width: 2px;
+}
+
+.border-tw-3px {
+  border-top-width: 3px;
+}
+.border-rw-3px {
+  border-right-width: 3px;
+}
+.border-bw-3px {
+  border-bottom-width: 3px;
+}
+.border-lw-3px {
+  border-left-width: 3px;
+}
+
+.border-tw-4px {
+  border-top-width: 4px;
+}
+.border-rw-4px {
+  border-right-width: 4px;
+}
+.border-bw-4px {
+  border-bottom-width: 4px;
+}
+.border-lw-4px {
+  border-left-width: 4px;
+}
+
+.outline-w-1px {
+  outline-width: 1px;
+}
+.outline-w-2px {
+  outline-width: 2px;
+}
+.outline-w-3px {
+  outline-width: 3px;
+}
+.outline-w-4px {
+  outline-width: 4px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+.border-dashed {
+  border-style: dashed;
+}
+.border-dotted {
+  border-style: dotted;
+}
+
+.outline-solid {
+  outline-style: solid;
+}
+.outline-dashed {
+  outline-style: dashed;
+}
+.outline-dotted {
+  outline-style: dotted;
+}
+
+.bs-1px {
+  @extend .border-w-1px, .border-solid !optional;
+}
+
+.bs-2px {
+  @extend .border-w-2px, .border-solid !optional;
+}
+
+.bs-3px {
+  @extend .border-w-3px, .border-solid !optional;
+}
+
+.bs-4px {
+  @extend .border-w-2px, .border-solid !optional;
+}
+
+.bts-1px {
+  @extend .border-tw-1px, .border-solid !optional;
+}
+
+.brs-1px {
+  @extend .border-rw-1px, .border-solid !optional;
+}
+
+.bbs-1px {
+  @extend .border-bw-1px, .border-solid !optional;
+}
+
+.bls-1px {
+  @extend .border-lw-1px, .border-solid !optional;
+}
+
+.os-1px {
+  @extend .outline-w-1px, .outline-solid !optional;
+}
+
+.os-2px {
+  @extend .outline-w-2px, .outline-solid !optional;
+}
+
+.os-3px {
+  @extend .outline-w-3px, .outline-solid !optional;
+}
+
+.os-4px {
+  @extend .outline-w-4px, .outline-solid !optional;
+}
